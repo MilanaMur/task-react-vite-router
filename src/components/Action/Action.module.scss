@@ -1,0 +1,20 @@
+@use '../../scss/variables' as *;
+
+.button {
+	@include button.common;
+}
+
+.primary {
+	color: $text-color;
+	background-color: $button-bgcolor;
+}
+
+.outline {
+	color: $text-color;
+	background-color: $button-bgcolor-secondary;
+}
+
+.secondary {
+	color: $text-color;
+	background-color: $button-bgcolor-secondary;
+}

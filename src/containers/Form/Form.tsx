@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+import styles from './Form.module.scss';
 import React, { FormHTMLAttributes, FunctionComponent } from 'react';
 
 export type FormTag = 'form' | FunctionComponent;
@@ -7,3 +9,16 @@ export type FormProps = {
 	Tag?: FormTag;
 	children?: React.ReactNode;
 } & FormHTMLAttributes<HTMLFormElement>;
+
+export function Form({
+	className,
+	children,
+	Tag = 'form',
+	...props
+}: FormProps) {
+	return (
+		<Tag {...props} className={clsx(styles.container, className)}>
+			{children}
+		</Tag>
+	);
+}

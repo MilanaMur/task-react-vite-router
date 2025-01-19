@@ -10,7 +10,12 @@ export type TitleTag = keyof Pick<
 	'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 >;
 
-export enum TypographyVariants {}
+export enum TypographyVariants {
+	caption = 'caption',
+	label = 'label',
+	normal = 'normal',
+	title = 'title'
+}
 
 export type TypographyProps<T = TextTag | TitleTag> = {
 	className?: string;

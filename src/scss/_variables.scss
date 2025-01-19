@@ -1,11 +1,22 @@
 $font-family: 'Open Sans', sans-serif;
-$font-size: 16px;
+
+$font-size-base: 16px;
+$font-size-less: 14px;
+$font-size-more: 16px;
+
 $background-color: #f4f4f4;
+
 $background-color-secondary: #e6ccb2;
+
 $text-color: #333333;
-$font-weight: 400;
+
+$font-weight-base: 400;
+$font-weight-more: 500;
+
 $link-color: #007bff;
 $link-color-hover: #0056b3;
+
 $button-bgcolor: #007bff;
 $button-bgcolor-hover: #0056b3;
+
 $border-radius: 5px;

@@ -2,7 +2,7 @@
 
 body {
     font-family: $font-family;
-    font-size: $font-size;
+    font-size: $font-size-base;
     color: $text-color;
     box-sizing: border-box;
     background-color: $background-color;
@@ -14,7 +14,7 @@ body, h1, h2, h3, h4, h5, h6, p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: $font-weight;
+    font-weight: $font-weight-base;
 }
 
 p {
@@ -31,7 +31,7 @@ a:hover {
 }
 
 button {
-    font-size: $font-size;
+    font-size: $font-size-base;
     color: $text-color;
     border: transparent;
     border-radius: $border-radius;
@@ -44,7 +44,7 @@ button:hover {
 }
 
 input {
-    font-size: $font-size;
+    font-size: $font-size-base;
     border: 1px solid #1a1919;
     border-radius: $border-radius;
     padding: 10px;

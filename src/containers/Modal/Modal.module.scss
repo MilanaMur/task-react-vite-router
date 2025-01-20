@@ -1,0 +1,29 @@
+@use '../../scss/variables' as *;
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+	background-color: white;
+	padding: 20px;
+	border-radius: $border-radius;
+}
+
+.close {
+	cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 20px;
+	border: none;
+	background-color: transparent;
+}

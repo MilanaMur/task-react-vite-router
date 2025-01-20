@@ -6,6 +6,6 @@ export type LogoProps = {
 	href?: string;
 };
 
-export function Logo({ className, href }) {
+export function Logo({ className, href }: LogoProps) {
 	return <img className={clsx(styles.logo, className)} src={href} />;
 }

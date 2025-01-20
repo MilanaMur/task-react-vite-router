@@ -15,7 +15,7 @@ export function RegisterForm({ className, formSettings }: RegisterFormProps) {
 			method="post"
 			className={clsx(styles.container, className)}
 		>
-			<Title>Зарегистрироваься</Title>
+			<Title>Регистрация</Title>
 			<Field>
 				<InputText name="name" placeholder="Имя" />
 			</Field>
@@ -28,6 +28,9 @@ export function RegisterForm({ className, formSettings }: RegisterFormProps) {
 			<Field>
 				<InputPassword placeholder="Повторите пароль" />
 			</Field>
+			<Button type="submit" name="singup">
+				Зарегистрироваться
+			</Button>
 		</Form>
 	);
 }

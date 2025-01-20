@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import styles from './Header.module.scss';
 import { ReactNode } from 'react';
 import { Logo } from '@/containers/Logo/Logo';
-import { Menu, MenuLink, MenuProps } from '@/containers/Menu/Menu';
+import { Menu } from '@/containers/Menu/Menu';
 
 export type HeaderProps = {
 	className?: string;

@@ -1,10 +1,20 @@
+import clsx from 'clsx';
+import styles from './Layout.module.scss';
 import { ReactNode } from 'react';
-import { HeaderProps } from './Header/Header';
-import { FooterProps } from './Footer/Footer';
+import { Header } from './Header/Header';
+import { Footer } from './Footer/Footer';
 
 export type LayoutProps = {
 	className?: string;
 	children?: ReactNode;
-	headerSettings?: HeaderProps;
-	footerSettings?: FooterProps;
 };
+
+export function Layout({ className, children }: LayoutProps) {
+	return (
+		<div className={clsx(styles.container, className)}>
+			<Header />
+			<main>{children}</main>
+			<Footer />
+		</div>
+	);
+}

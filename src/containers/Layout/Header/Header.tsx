@@ -12,8 +12,11 @@ export type HeaderProps = {
 export function Header({ className, children }: HeaderProps) {
 	return (
 		<header className={clsx(styles.container, className)}>
-			<Logo href="../../../../public/favicon.svg" />
-			<Menu links={[{ label: 'Главная', href: '/' }]} />
+			<Logo />
+			<Menu links={[{ label: 'Home', href: '/' },
+				{ label: 'Sign Up', href: '/register' },
+				{ label: 'Sign In', href: '/login' }
+			]} />
 			{children}
 		</header>
 	);

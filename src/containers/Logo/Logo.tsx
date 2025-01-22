@@ -3,9 +3,8 @@ import styles from './Logo.module.scss';
 
 export type LogoProps = {
 	className?: string;
-	href?: string;
 };
 
-export function Logo({ className, href }: LogoProps) {
-	return <img className={clsx(styles.logo, className)} src={href} />;
+export function Logo({ className }: LogoProps) {
+	return <img className={clsx(styles.logo, className)} src='src/containers/Logo/logo.png' />;
 }

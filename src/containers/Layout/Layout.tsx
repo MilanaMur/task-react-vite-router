@@ -12,9 +12,9 @@ export type LayoutProps = {
 export function Layout({ className, children }: LayoutProps) {
 	return (
 		<div className={clsx(styles.container, className)}>
-			<Header />
-			<main>{children}</main>
-			<Footer />
+			<Header className={clsx(styles.header)} />
+			<main className={clsx(styles.main)}>{children}</main>
+			<Footer className={clsx(styles.footer)} />
 		</div>
 	);
 }

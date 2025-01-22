@@ -12,8 +12,8 @@ export type FooterProps = {
 export function Footer({ className }: FooterProps) {
 	return (
 		<footer className={clsx(styles.container, className)}>
-			<Logo href="../../../../public/favicon.svg" />
-			<Menu links={[{ label: '', href: '' }]} />
+			<Logo />
+			<Menu links={[{ label: 'Home', href: '/' }]} />
 		</footer>
 	);
 }

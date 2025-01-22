@@ -1,27 +1,29 @@
 @use '../../scss/variables' as *;
 
 .container {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .caption {
-    font-size: $font-size-less;
-    font-weight: $font-weight-base;
+	font-size: $font-size-less;
+	font-weight: $font-weight-base;
 }
 
 .label {
-    font-size: $font-size-less;
-    font-weight: $font-weight-more;
-    text-transform: uppercase;
+	font-size: $font-size-less;
+	font-weight: $font-weight-more;
+	text-transform: uppercase;
 }
 
 .normal {
-    font-size: $font-size-base;
-    font-weight: $font-weight-base;
+	font-size: $font-size-base;
+	font-weight: $font-weight-base;
+	color: $text-color-secondary;
 }
 
 .title {
-    font-size: $font-size-base;
-    font-weight: $font-weight-more;
+	font-size: $font-size-base;
+	font-weight: $font-weight-more;
+	color: $text-color-secondary;
 }

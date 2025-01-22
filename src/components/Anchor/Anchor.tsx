@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+import styles from './Anchor.module.scss';
 import { AnchorHTMLAttributes, MouseEvent } from 'react';
 import { useAnchor, useLinkProps } from './hooks';
 
@@ -15,7 +17,7 @@ export function Anchor({ href, children, ...props }: AnchorProps) {
 	const propsLink = useLinkProps(href);
 
 	return (
-		<LinkElement {...props} {...propsLink}>
+		<LinkElement {...props} {...propsLink} className={clsx(styles.link)}>
 			{children}
 		</LinkElement>
 	);

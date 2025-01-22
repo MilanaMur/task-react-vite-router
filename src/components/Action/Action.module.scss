@@ -1,20 +1,29 @@
 @use '../../scss/variables' as *;
 
 .button {
-	@include button.common;
+	font-size: $font-size-base;
+	color: $text-color-primary;
+	border: transparent;
+	border-radius: $border-radius;
+	padding: 10px;
+	background-color: $button-bgcolor-primary;
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .primary {
-	color: $text-color;
-	background-color: $button-bgcolor;
+	color: $text-color-primary;
+	background-color: $button-bgcolor-primary;
 }
 
 .outline {
-	color: $text-color;
+	color: $text-color-secondary;
 	background-color: $button-bgcolor-secondary;
 }
 
 .secondary {
-	color: $text-color;
+	color: $text-color-secondary;
 	background-color: $button-bgcolor-secondary;
 }

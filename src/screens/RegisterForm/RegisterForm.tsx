@@ -5,32 +5,24 @@ import { Typography } from '@/components/Typography/Typography';
 import { Field } from '@/containers/Field/Field';
 import { InputEmail, InputPassword, InputText } from '@/components/Input/Input';
 import { Button } from '@/components/Action/Action';
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 
 export type RegisterFormProps = {
 	className?: string;
 	formSettings?: Omit<FormProps, 'children'>;
-	onSubmit: (
-		name: string,
-		email: string,
-		password: string,
-		confirmPassword: string
-	) => void;
 };
 
-export function RegisterForm({
-	className,
-	formSettings,
-	onSubmit,
-}: RegisterFormProps) {
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [confirmPassword, setConfirmPassword] = useState('');
+export function RegisterForm({ className, formSettings }: RegisterFormProps) {
+	const [formData, setFormData] = useState({});
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+		setFormData({ ...formData, [e.target.name]: e.target.value });
+	};
+
+	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		onSubmit(name, email, password, confirmPassword);
+
+		console.log('RegisterForm submitted:', formData);
 	};
 
 	return (
@@ -38,38 +30,31 @@ export function RegisterForm({
 			{...formSettings}
 			method="post"
 			className={clsx(styles.container, className)}
-			onSubmit={(e) => handleSubmit(e)}
+			onSubmit={handleSubmit}
 		>
 			<Typography>Sign Up</Typography>
 			<Field label="Name">
-				<InputText
-					name="name"
-					placeholder="Name"
-					value={name}
-					onChange={(e) => setName(e.target.value)}
-				/>
+				<InputText name="name" placeholder="Name" onChange={handleChange} />
 			</Field>
 			<Field label="Email">
 				<InputEmail
 					name="email"
 					placeholder="email@example.com"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
+					onChange={handleChange}
 				/>
 			</Field>
 			<Field label="Password">
 				<InputPassword
 					name="password"
 					placeholder="Password"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
+					onChange={handleChange}
 				/>
 			</Field>
 			<Field label="Repeat password">
 				<InputPassword
+					name="confirm-password"
 					placeholder="Password"
-					value={confirmPassword}
-					onChange={(e) => setConfirmPassword(e.target.value)}
+					onChange={handleChange}
 				/>
 			</Field>
 			<Button type="submit" name="singup">

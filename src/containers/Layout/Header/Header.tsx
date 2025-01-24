@@ -13,10 +13,13 @@ export function Header({ className, children }: HeaderProps) {
 	return (
 		<header className={clsx(styles.container, className)}>
 			<Logo />
-			<Menu links={[{ label: 'Home', href: '/' },
-				{ label: 'Sign Up', href: '/register' },
-				{ label: 'Sign In', href: '/login' }
-			]} />
+			<Menu
+				links={[
+					{ label: 'Home', href: '/' },
+					{ label: 'Sign In', href: '/login' },
+					{ label: 'Sign Up', href: '/register' }
+				]}
+			/>
 			{children}
 		</header>
 	);

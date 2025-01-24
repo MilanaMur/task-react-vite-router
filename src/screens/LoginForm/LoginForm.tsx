@@ -5,26 +5,24 @@ import { Button } from '@/components/Action/Action';
 import { InputEmail, InputPassword } from '../../components/Input/Input';
 import { Field } from '@/containers/Field/Field';
 import { Typography } from '@/components/Typography/Typography';
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 
 export type LoginFormProps = {
 	className?: string;
 	formSettings?: Omit<FormProps, 'children'>;
-	onSubmit: (email: string, password: string) => void;
 };
 
-export function LoginForm({
-	className,
-	formSettings,
-	onSubmit,
-}: LoginFormProps) {
-	const [email, setEmail] = useState<string>('');
-	const [password, setPassword] = useState<string>('');
+export function LoginForm({ className, formSettings }: LoginFormProps) {
+	const [formData, setFormData] = useState({});
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+		setFormData({ ...formData, [e.target.name]: e.target.value });
+	};
+
+	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		onSubmit(email, password);
+		console.log('LoginForm submitted:', formData);
 	};
 
 	return (
@@ -32,23 +30,21 @@ export function LoginForm({
 			{...formSettings}
 			method="post"
 			className={clsx(styles.container, className)}
-			onSubmit={(e) => handleSubmit(e)}
+			onSubmit={handleSubmit}
 		>
 			<Typography variant="title">Sign In</Typography>
 			<Field label="Email">
 				<InputEmail
 					name="email"
 					placeholder="email@example.com"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
+					onChange={handleChange}
 				/>
 			</Field>
 			<Field label="Password">
 				<InputPassword
 					name="password"
 					placeholder="Password"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
+					onChange={handleChange}
 				/>
 			</Field>
 			<Button type="submit" name="signin">

@@ -1,0 +1,6 @@
+@use '../../scss/variables' as *;
+
+.link {
+	color: $link-color;
+	text-decoration: none;
+}

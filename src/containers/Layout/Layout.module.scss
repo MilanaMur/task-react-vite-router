@@ -1,0 +1,26 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.container > * {
+	box-sizing: border-box;
+}
+
+.header {
+	flex: 0 0 20%;
+}
+
+.main {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	inline-size: 100%;
+	flex: 0 0 60%;
+}
+
+.footer {
+	flex: 0 0 20%;
+}
